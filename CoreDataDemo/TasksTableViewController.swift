@@ -16,6 +16,7 @@ class TasksTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         
         if let tasks = person?.tasks {
             self.tasks = tasks.allObjects as! [Task]
@@ -51,6 +52,7 @@ class TasksTableViewController: UITableViewController {
         
         let task = Task(entity: entity!, insertInto: context)
         task.title = title
+        task.person = person
         appDelegate.saveContext()
         tasks.append(task)
         
