@@ -51,6 +51,7 @@ class TasksTableViewController: UITableViewController {
         
         let task = Task(entity: entity!, insertInto: context)
         task.title = title
+        task.person = person
         appDelegate.saveContext()
         tasks.append(task)
         
