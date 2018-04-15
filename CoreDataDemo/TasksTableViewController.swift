@@ -17,15 +17,8 @@ class TasksTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
-        
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            tasks = results as! [Task]
-        } catch let error as NSError {
-            print("Fetching Error: \(error.userInfo)")
+        if let tasks = person?.tasks {
+            self.tasks = tasks.allObjects as! [Task]
         }
     }
     
@@ -72,6 +65,7 @@ class TasksTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let task = tasks[indexPath.row]
         let title = task.title
+        task.person = person
         cell.textLabel?.text = title
         
         return cell
