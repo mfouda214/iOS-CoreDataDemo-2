@@ -11,9 +11,7 @@ import UIKit
 import CoreData
 
 class TableViewController: UITableViewController {
-    let firstNames = ["Jane", "John", "Stephen", "Stacy", "Taylor", "Alex", "Eren"]
-    let lastNames = ["White", "Black", "Fox", "Jones", "King", "McQueen", "Yeager"]
-    let ages = [25, 26, 20, 30, 27, 28, 23]
+
     var people = [Person]()
 
 
@@ -59,7 +57,20 @@ class TableViewController: UITableViewController {
         
         return cell
     }
-
+    @IBAction func RootView(_ sender: UIBarButtonItem) {
+   
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "First")
+        
+        viewController.modalPresentationStyle = .popover
+        let popover: UIPopoverPresentationController = viewController.popoverPresentationController!
+        popover.barButtonItem = sender
+        popover.delegate = self as? UIPopoverPresentationControllerDelegate
+        present(viewController, animated: true, completion:nil)
+        
+    
+    }
+    
     @IBAction func addButtonWasTapped(_ sender: UIBarButtonItem) {
 //        let randomFirstName = firstNames[Int(arc4random_uniform(UInt32(firstNames.count)))]
 //        let randomLastName = lastNames[Int(arc4random_uniform(UInt32(lastNames.count)))]
@@ -127,5 +138,21 @@ class TableViewController: UITableViewController {
         self.tableView.reloadData()
     }
 
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .fullScreen
+    }
+    
+    func presentationController(_ controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController? {
+        let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(FirstViewController.dismissViewController))
+        navigationController.topViewController?.navigationItem.rightBarButtonItem = doneButton
+        return navigationController
+        
+    }
+    
+    @objc func dismissViewController() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
