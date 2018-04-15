@@ -2,9 +2,9 @@
 //  Person+CoreDataProperties.swift
 //  CoreDataDemo
 //
-//  Updated by Mohamed Sobhi Fouda on 15/4/18.
-//  Created by Hesham Abd-Elmegid on 10/12/17.
-//  Copyright © 2017 CareerFoundry. All rights reserved.
+//  Created by Mohamed Sobhi  Fouda on 4/15/18.
+//  Copyright © 2018 CareerFoundry. All rights reserved.
+//
 //
 
 import Foundation
@@ -20,5 +20,23 @@ extension Person {
     @NSManaged public var age: Int32
     @NSManaged public var firstName: String?
     @NSManaged public var lastName: String?
+    @NSManaged public var tasks: NSSet?
+
+}
+
+// MARK: Generated accessors for tasks
+extension Person {
+
+    @objc(addTasksObject:)
+    @NSManaged public func addToTasks(_ value: Task)
+
+    @objc(removeTasksObject:)
+    @NSManaged public func removeFromTasks(_ value: Task)
+
+    @objc(addTasks:)
+    @NSManaged public func addToTasks(_ values: NSSet)
+
+    @objc(removeTasks:)
+    @NSManaged public func removeFromTasks(_ values: NSSet)
 
 }
