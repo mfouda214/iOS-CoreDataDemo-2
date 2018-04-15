@@ -61,18 +61,66 @@ class TableViewController: UITableViewController {
     }
 
     @IBAction func addButtonWasTapped(_ sender: UIBarButtonItem) {
-        let randomFirstName = firstNames[Int(arc4random_uniform(UInt32(firstNames.count)))]
-        let randomLastName = lastNames[Int(arc4random_uniform(UInt32(lastNames.count)))]
-        let randomAge = ages[Int(arc4random_uniform(UInt32(ages.count)))]
+//        let randomFirstName = firstNames[Int(arc4random_uniform(UInt32(firstNames.count)))]
+//        let randomLastName = lastNames[Int(arc4random_uniform(UInt32(lastNames.count)))]
+//        let randomAge = ages[Int(arc4random_uniform(UInt32(ages.count)))]
+//
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let entity = NSEntityDescription.entity(forEntityName: "Person", in: context)
+//
+//        let person = Person(entity: entity!, insertInto: context)
+//        person.firstName = randomFirstName
+//        person.lastName = randomLastName
+//        person.age = Int32(randomAge)
+//        appDelegate.saveContext()
+//        people.append(person)
+//
+//        self.tableView.reloadData()
+        ////////////
         
+        let alertController = UIAlertController(title: "Add Person", message: "", preferredStyle: .alert)
+        
+        alertController.addTextField(configurationHandler: {(_ textField: UITextField) -> Void in
+            textField.placeholder = "First Name"
+        })
+        
+        alertController.addTextField(configurationHandler: {(_ textField: UITextField) -> Void in
+            textField.placeholder = "Last Name"
+        })
+        
+        alertController.addTextField(configurationHandler: {(_ textField: UITextField) -> Void in
+            textField.placeholder = "Age"
+        })
+        
+        let confirmAction = UIAlertAction(title: "OK", style: .default, handler: {(_ action: UIAlertAction) -> Void in
+            if let firstName = alertController.textFields?[0].text {
+               let lastName = alertController.textFields?[1].text
+                let age = Int32((alertController.textFields?[2].text)!)
+                        
+                self.createPerson(firstName: firstName, lastName: lastName!, age: age!)
+                
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func createPerson(firstName: String, lastName: String, age: Int32) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Person", in: context)
         
         let person = Person(entity: entity!, insertInto: context)
-        person.firstName = randomFirstName
-        person.lastName = randomLastName
-        person.age = Int32(randomAge)
+        person.firstName = firstName
+        person.lastName = lastName
+        person.age = age
         appDelegate.saveContext()
         people.append(person)
         
