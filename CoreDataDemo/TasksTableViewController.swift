@@ -16,6 +16,7 @@ class TasksTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
         
         if let tasks = person?.tasks {
             self.tasks = tasks.allObjects as! [Task]
