@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		54C3AE641F8FEE7500090CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3AE631F8FEE7500090CBB /* AppDelegate.swift */; };
-		54C3AE661F8FEE7500090CBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3AE651F8FEE7500090CBB /* ViewController.swift */; };
+		54C3AE661F8FEE7500090CBB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3AE651F8FEE7500090CBB /* TableViewController.swift */; };
 		54C3AE691F8FEE7500090CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C3AE671F8FEE7500090CBB /* Main.storyboard */; };
 		54C3AE6C1F8FEE7500090CBB /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54C3AE6A1F8FEE7500090CBB /* CoreDataDemo.xcdatamodeld */; };
 		54C3AE6E1F8FEE7500090CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C3AE6D1F8FEE7500090CBB /* Assets.xcassets */; };
 		54C3AE711F8FEE7500090CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C3AE6F1F8FEE7500090CBB /* LaunchScreen.storyboard */; };
+		54C3AE831F90026E00090CBB /* TasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3AE821F90026E00090CBB /* TasksTableViewController.swift */; };
+		54F26C5D1F900BE00094D379 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F26C591F900BE00094D379 /* Task+CoreDataClass.swift */; };
+		54F26C5E1F900BE00094D379 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F26C5A1F900BE00094D379 /* Task+CoreDataProperties.swift */; };
+		54F26C5F1F900BE00094D379 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F26C5B1F900BE00094D379 /* Person+CoreDataClass.swift */; };
+		54F26C601F900BE00094D379 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F26C5C1F900BE00094D379 /* Person+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		54C3AE601F8FEE7500090CBB /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C3AE631F8FEE7500090CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		54C3AE651F8FEE7500090CBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		54C3AE651F8FEE7500090CBB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		54C3AE681F8FEE7500090CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54C3AE6B1F8FEE7500090CBB /* CoreDataDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataDemo.xcdatamodel; sourceTree = "<group>"; };
 		54C3AE6D1F8FEE7500090CBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		54C3AE701F8FEE7500090CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54C3AE721F8FEE7500090CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54C3AE821F90026E00090CBB /* TasksTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewController.swift; sourceTree = "<group>"; };
+		54F26C591F900BE00094D379 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54F26C5A1F900BE00094D379 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54F26C5B1F900BE00094D379 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
+		54F26C5C1F900BE00094D379 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,10 @@
 		54C3AE571F8FEE7500090CBB = {
 			isa = PBXGroup;
 			children = (
+				54F26C591F900BE00094D379 /* Task+CoreDataClass.swift */,
+				54F26C5A1F900BE00094D379 /* Task+CoreDataProperties.swift */,
+				54F26C5B1F900BE00094D379 /* Person+CoreDataClass.swift */,
+				54F26C5C1F900BE00094D379 /* Person+CoreDataProperties.swift */,
 				54C3AE621F8FEE7500090CBB /* CoreDataDemo */,
 				54C3AE611F8FEE7500090CBB /* Products */,
 			);
@@ -57,7 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				54C3AE631F8FEE7500090CBB /* AppDelegate.swift */,
-				54C3AE651F8FEE7500090CBB /* ViewController.swift */,
+				54C3AE651F8FEE7500090CBB /* TableViewController.swift */,
+				54C3AE821F90026E00090CBB /* TasksTableViewController.swift */,
 				54C3AE671F8FEE7500090CBB /* Main.storyboard */,
 				54C3AE6D1F8FEE7500090CBB /* Assets.xcassets */,
 				54C3AE6F1F8FEE7500090CBB /* LaunchScreen.storyboard */,
@@ -139,8 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C3AE661F8FEE7500090CBB /* ViewController.swift in Sources */,
+				54C3AE831F90026E00090CBB /* TasksTableViewController.swift in Sources */,
+				54F26C5F1F900BE00094D379 /* Person+CoreDataClass.swift in Sources */,
+				54F26C5D1F900BE00094D379 /* Task+CoreDataClass.swift in Sources */,
+				54C3AE661F8FEE7500090CBB /* TableViewController.swift in Sources */,
 				54C3AE6C1F8FEE7500090CBB /* CoreDataDemo.xcdatamodeld in Sources */,
+				54F26C601F900BE00094D379 /* Person+CoreDataProperties.swift in Sources */,
+				54F26C5E1F900BE00094D379 /* Task+CoreDataProperties.swift in Sources */,
 				54C3AE641F8FEE7500090CBB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
